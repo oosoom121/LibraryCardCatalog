@@ -1,0 +1,7 @@
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\bin\Debug\LibraryCardCatalog.exe.config
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\bin\Debug\LibraryCardCatalog.exe
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\bin\Debug\LibraryCardCatalog.pdb
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\obj\Debug\LibraryCardCatalog.csprojResolveAssemblyReference.cache
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\obj\Debug\LibraryCardCatalog.csproj.CoreCompileInputs.cache
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\obj\Debug\LibraryCardCatalog.exe
+C:\Users\oosoo\Desktop\Coding Temple\Card Catalog Revised\LibraryCardCatalog\LibraryCardCatalog\obj\Debug\LibraryCardCatalog.pdb
