@@ -31,40 +31,6 @@ namespace LibraryCardCatalog
 			Console.Write("\n\n\t\t\t\tEnter your card catalogs filename: ");
 			FileName = filePath + Console.ReadLine() + ".xml";
 
-			// This try catch block is protecting against someone imputting a file name that can't be recognized
-			// For instance, since the path is already formatted, if the user imputs the path along with the
-			// file name they'll receive a message and the program will end.  
-			try
-			{
-				// Check to see if the file and path exist.  If not, prompt the user to create.
-				if (!File.Exists(FileName))
-				{
-					Console.Write("\t\t\t\tFile does not exist. Would you like to create it? (Y or N)");
-					char create = Convert.ToChar(Console.ReadLine());
-
-					if (create.ToString().ToUpper() == "N")
-					{
-						Environment.Exit(0);  // Exit program.  We may want to change this to accommodate multiple book files.
-					}
-					else
-					{
-						Directory.CreateDirectory(filePath);
-
-						File.Create(FileName).Dispose();
-					}
-				}
-			}
-			catch (Exception ex)
-			{
-				Console.Write("\n\n\t\t\t\t\tFile name not valid! Enter only a file name.\n\t\t\t\t\t" + ex.Message
-					+ "\n\n\t\t\t\tDo you want to try again? Enter 'Y' or any other key to Exit");
-				if (((ConsoleKeyInfo)Console.ReadKey()).Key == ConsoleKey.Y)
-				{
-					Console.Clear();
-					ManageTheFile();
-				}
-				Environment.Exit(0);
-			}
 			return FileName;
 		}
 
@@ -74,7 +40,6 @@ namespace LibraryCardCatalog
 			XmlSerializer readBooksFile = new XmlSerializer(typeof(List<Book>));
 
 			Console.Clear();
-
 			using (FileStream readBookStream = File.OpenRead(FileName))
 			{
 				bookList = (List<Book>)readBooksFile.Deserialize(readBookStream);
@@ -115,12 +80,24 @@ namespace LibraryCardCatalog
 		}
 		public void SaveAndExit()
 		{
-			using (Stream bookStream = new FileStream(FileName, FileMode.Append, FileAccess.Write, FileShare.None))
+			if (!File.Exists(FileName))
 			{
-				XmlSerializer serialBooks = new XmlSerializer(typeof(List<Book>));
-				serialBooks.Serialize(bookStream, bookList);
-				Environment.Exit(0);
+				using (Stream bookStream = new FileStream(FileName, FileMode.Append, FileAccess.Write, FileShare.None))
+				{
+					XmlSerializer serialBooks = new XmlSerializer(typeof(List<Book>));
+					serialBooks.Serialize(bookStream, bookList);
+				}
 			}
+			else
+			{
+				using (FileStream bookStream = File.OpenWrite(FileName))
+				{
+					XmlSerializer serialBooks = new XmlSerializer(typeof(List<Book>));
+					serialBooks.Serialize(bookStream, bookList);
+				}
+			}
+			
+			Environment.Exit(0);
 		}
 	}
 }
