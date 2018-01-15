@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{49EE019E-EBBD-4691-9C54-4940B4FB6122}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="LibraryCardCatalog/Program.cs">
+    <Files>
+      <File FileName="LibraryCardCatalog/Program.cs" Line="9" Column="25" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LibraryCardCatalog" expanded="True">
+            <Node name="LibraryCardCatalog" expanded="True">
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
